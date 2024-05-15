@@ -44,4 +44,5 @@ keep-inv-off-msg: '&cTime or lives have run out, keep inventory is off.'
 ### Folia inquisitors
 
 [<img src="https://github.com/Folia-Inquisitors.png" width=80 alt="Folia-Inquisitors">](https://github.com/orgs/Folia-Inquisitors/repositories)
-[<img src="https://github.com/ChromMob.png" width=80 alt="C">](https://github.com/ChromeMob)
+[<img src="https://github.com/leon0017.png" width=80 alt="C">](https://github.com/leon0017
+)
