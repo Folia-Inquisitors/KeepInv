@@ -1,9 +1,12 @@
 package me.leonrobi.keepinv;
 
 import me.clip.placeholderapi.expansion.PlaceholderExpansion;
+import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Objects;
 
 public class Placeholders extends PlaceholderExpansion {
 
@@ -42,15 +45,39 @@ public class Placeholders extends PlaceholderExpansion {
         Player p = (Player)player;
 
         if (params.equalsIgnoreCase("lives")) {
-            return keepInv.lives.get(p).toString();
+            int lives = keepInv.lives.get(p);
+            if (lives == 0)
+                return "";
+            else
+                return String.valueOf(lives);
         } else if (params.equalsIgnoreCase("lives_hearts")){
             return new String(new char[keepInv.lives.get(p)]).replace("\0", "❤");
         } else if (params.equalsIgnoreCase("timer_secs")) {
-            return keepInv.timers.get(p).toString();
+            long time = keepInv.timers.get(p);
+            if (time == 0)
+                return "";
+            else
+                return String.valueOf(time);
         } else if (params.equalsIgnoreCase("timer_mins")) {
-            return String.valueOf((keepInv.timers.get(p) / 60));
+            long mins = (keepInv.timers.get(p) / 60) + 1L;
+            if (mins == 0)
+                return "";
+            else
+                return String.valueOf(mins);
+        } else if (params.equalsIgnoreCase("info")) {
+            if (keepInv.timers.get(p) <= 0 || keepInv.lives.get(p) <= 0) {
+                return "";
+            } else {
+                return ChatColor.translateAlternateColorCodes('&',
+                        Objects.requireNonNull(keepInv.config.getString("info-msg")));
+            }
         } else if (params.equalsIgnoreCase("timer")) {
-            return String.valueOf(convertSecondsToMinutes(keepInv.timers.get(p)));
+            long time = keepInv.timers.get(p);
+            if (time <= 0 || keepInv.lives.get(p) <= 0) {
+                return "";
+            } else {
+                return String.valueOf(convertSecondsToMinutes(keepInv.timers.get(p)));
+            }
         }
         return null;
     }

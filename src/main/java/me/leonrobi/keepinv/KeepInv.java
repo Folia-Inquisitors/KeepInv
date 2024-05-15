@@ -37,6 +37,7 @@ public final class KeepInv extends JavaPlugin implements Listener {
         config.addDefault("death-limit", 3);
         config.addDefault("keep-inv-on-msg", "&eYou have You have %time%s or %lives% lives left until keep inventory is disabled.");
         config.addDefault("keep-inv-off-msg", "&cTime or lives have run out, keep inventory is off.");
+        config.addDefault("info-msg", "&eTime left on keep inv:");
         config.options().copyDefaults(true);
         this.saveConfig();
 
