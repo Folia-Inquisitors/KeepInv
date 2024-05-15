@@ -1,5 +1,6 @@
 package me.leonrobi.keepinv;
 
+import com.tcoded.folialib.FoliaLib;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -68,16 +69,15 @@ public final class KeepInv extends JavaPlugin implements Listener {
     }
 
     private void startTimer() {
-        new BukkitRunnable() {
-            @Override
-            public void run() {
-                for (Player p : Bukkit.getOnlinePlayers()) {
-                    long currentTime = timers.get(p);
-                    if (currentTime > 0)
-                        timers.put(p, currentTime - 1);
-                }
+        FoliaLib foliaLib = new FoliaLib(this);
+
+        foliaLib.getImpl().runTimer(() -> {
+            for (Player p : Bukkit.getOnlinePlayers()) {
+                long currentTime = timers.get(p);
+                if (currentTime > 0)
+                    timers.put(p, currentTime - 1);
             }
-        }.runTaskTimer(this, 20L, 20L);
+        }, 20L, 20L);
     }
 
     @Override
