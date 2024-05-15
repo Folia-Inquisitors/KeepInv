@@ -8,6 +8,12 @@ https://discord.gg/aT9z7q7hX8
 ## Building instructions
 
 ./gradlew shadowjar
+
+### Dependencies
+
+PlaceHolderAPI
+
+Folialib
  
 ## Description
 
@@ -34,10 +40,6 @@ keep-inv-off-msg: '&cTime or lives have run out, keep inventory is off.'
 %keepinv_timer_mins% - time left as minutes
 %keepinv_timer% - time left as MM:SS format
 ```
-
-### Dependencies
-
-PlaceHolderAPI
 
 ### Folia inquisitors
 
