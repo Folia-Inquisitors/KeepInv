@@ -1,0 +1,6 @@
+name: KeepInv
+version: '${version}'
+main: me.leonrobi.keepinv.KeepInv
+api-version: '1.20'
+softdepend: [PlaceholderAPI]
+folia-supported: true
