@@ -46,7 +46,7 @@ public class Placeholders extends PlaceholderExpansion {
 
         if (params.equalsIgnoreCase("lives")) {
             int lives = keepInv.lives.get(p);
-            if (lives == 0)
+            if (lives == 0 || keepInv.timers.get(p) <= 0)
                 return "";
             else
                 return String.valueOf(lives);
