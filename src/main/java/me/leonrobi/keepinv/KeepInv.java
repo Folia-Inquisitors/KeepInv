@@ -72,7 +72,7 @@ public final class KeepInv extends JavaPlugin implements Listener {
         FoliaLib foliaLib = new FoliaLib(this);
 
         foliaLib.getImpl().runTimer(() -> {
-            for (Player p : Bukkit.getOnlinePlayers()) {
+            for (Player p : timers.keySet()) {
                 long currentTime = timers.get(p);
                 if (currentTime > 0)
                     timers.put(p, currentTime - 1);
@@ -82,7 +82,7 @@ public final class KeepInv extends JavaPlugin implements Listener {
 
     @Override
     public void onDisable() {
-        for (Player p : Bukkit.getOnlinePlayers())
+        for (Player p : timers.keySet())
             onQuit(p);
 
         try {
