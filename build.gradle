@@ -33,12 +33,7 @@ dependencies {
 }
 
 shadowJar {
-    dependencies {
-        include dependency("com.tcoded:FoliaLib:0.3.1")
-    }
-    archiveBaseName.set('KeepInv-shadow')
-    archiveClassifier.set('')
-    archiveVersion.set('')
+    relocate 'com.tcoded.folialib', 'me.leonrobi.folialib'
 }
 
 def targetJavaVersion = 17
@@ -67,3 +62,5 @@ processResources {
         expand props
     }
 }
+
+assemble.dependsOn shadowJar
