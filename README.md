@@ -35,7 +35,6 @@ keep-inv-off-msg: '&cTime or lives have run out, keep inventory is off.'
 ```
 %keepinv_lives% - lives left
 %keepinv_lives_hearts% - Shows how many hearts are left
-%keepinv_lives_hearts% - lives left as hearts
 %keepinv_timer_secs% - time left as seconds
 %keepinv_timer_mins% - time left as minutes
 %keepinv_timer% - time left as MM:SS format
