@@ -17,7 +17,7 @@ Folialib
  
 ## Description
 
-This plugin is meant to be servers who's player join, die, then leave. Variables such as Placeholders, Death limit, and Time limit can be set for when players loose keep inventory
+This plugin is meant to be servers who's player join, die, then leave. Variables such as Placeholders, Death limit, and Time limit can be set for when players loose keep inventory.
 
 
 ## Default Config
@@ -38,6 +38,10 @@ keep-inv-off-msg: '&cTime or lives have run out, keep inventory is off.'
 %keepinv_timer_secs% - time left as seconds
 %keepinv_timer_mins% - time left as minutes
 %keepinv_timer% - time left as MM:SS format
+```
+### Soft Dependency
+```
+> - [RegularRank](https://github.com/Folia-Inquisitors/RegularRank) *Purpose: Adds a rank "regular" so it can be exempted from Fakeplayer names*
 ```
 
 ### Folia inquisitors
