@@ -40,9 +40,9 @@ keep-inv-off-msg: '&cTime or lives have run out, keep inventory is off.'
 %keepinv_timer% - time left as MM:SS format
 ```
 ### Soft Dependency
-```
+
 > - [RegularRank](https://github.com/Folia-Inquisitors/RegularRank) *Purpose: Adds a rank "regular" so it can be exempted from Fakeplayer names*
-```
+
 
 ### Folia inquisitors
 
